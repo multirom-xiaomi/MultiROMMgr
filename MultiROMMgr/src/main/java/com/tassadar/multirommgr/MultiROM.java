@@ -89,6 +89,26 @@ public class MultiROM {
         return true;
     }
 
+    public boolean findNokexecSupported() {
+        List<String> out = Shell.SU.run("\'%s/busybox\' cat \"%s/multirom.ini\"", m_path, m_path);
+        if (out == null || out.isEmpty())
+            return false;
+
+        String entry;
+        for(int i = 0; i < out.size(); ++i) {
+            entry = out.get(i).trim();
+            if (entry.startsWith("allow_nkk71_nokexec=")) {
+                entry = entry.substring(20); // strlen("allow_nkk71_nokexec=");
+                if(!entry.isEmpty()) {
+			if (!entry.startsWith("0"))
+				return true;
+		}
+            }
+        }
+
+        return false;
+    }
+
     private String findInternalRomName() {
         List<String> out = Shell.SU.run("\'%s/busybox\' cat \"%s/multirom.ini\"", m_path, m_path);
         if (out == null || out.isEmpty())

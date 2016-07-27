@@ -143,8 +143,12 @@ public class RomBootDialog extends DialogFragment implements View.OnClickListene
             }
 
             if(!has_kexec && m.isKexecNeededFor(m_rom)) {
-                a.runOnUiThread(new SetErrorTextRunnable(R.string.rom_boot_kexec));
-                return;
+                if (!m.findNokexecSupported()) {
+                        a.runOnUiThread(new SetErrorTextRunnable(R.string.rom_boot_kexec));
+                        return;
+                } else {
+                        a.runOnUiThread(new SetNokexecTextRunnable(R.string.rom_boot_nokexec));
+                }
             }
 
             // this won't return unless it fails
@@ -173,6 +177,29 @@ public class RomBootDialog extends DialogFragment implements View.OnClickListene
                 b.setEnabled(true);
                 b = (Button)v.findViewById(R.id.boot_btn);
                 b.setVisibility(View.GONE);
+            }
+        }
+    }
+
+    private class SetNokexecTextRunnable implements Runnable {
+        private String m_text;
+        public SetNokexecTextRunnable(int text_fmt, Object... args) {
+            m_text = Utils.getString(text_fmt, args);
+        }
+
+        @Override
+        public void run() {
+            setCancelable(true);
+
+            View v = getView();
+            if(v != null) {
+                TextView t = (TextView)v.findViewById(R.id.dialog_text);
+                t.setText(m_text);
+
+                Button b = (Button)v.findViewById(R.id.cancel_btn);
+                b.setVisibility(View.GONE);
+                b = (Button)v.findViewById(R.id.boot_btn);
+                b.setEnabled(true);
             }
         }
     }

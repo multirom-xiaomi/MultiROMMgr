@@ -105,6 +105,7 @@
     <string name="boot_rom">Do you really wish to boot into ROM \"%s\"?</string>
     <string name="booting">Booting ROM...</string>
     <string name="rom_boot_kexec">This ROM requires kernel with kexec-hardboot patch, please install it.</string>
+    <string name="rom_boot_nokexec">No kexec-hardboot patch found. Continuing with no-kexec-workaround @nkk71 (extended by @premaca).</string>
     <string name="rom_boot_failed">Failed to boot into this ROM!</string>
     <string name="rom_boot_req_ver">Booting into ROMs directly from this app requires MultiROM v%s or higher.</string>
     <string name="ok_nohtml">OK</string>
