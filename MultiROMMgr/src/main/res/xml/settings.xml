@@ -7,7 +7,7 @@
             android:key="general_update_check"
             android:summary="@string/pref_update_check_sum"
             android:title="@string/pref_update_check"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
         <CheckBoxPreference
             android:key="general_auto_reboot"
             android:summary="@string/pref_auto_reboot_summ"
@@ -26,7 +26,7 @@
             android:key="utouch_show_hidden"
             android:summary="@string/pref_hidden_channels_summ"
             android:title="@string/pref_hidden_channels"
-            android:defaultValue="false" />
+            android:defaultValue="true" />
         <CheckBoxPreference
             android:key="utouch_delete_files"
             android:defaultValue="false"
