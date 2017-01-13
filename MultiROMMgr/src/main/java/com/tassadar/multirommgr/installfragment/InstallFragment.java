@@ -106,13 +106,6 @@ public class InstallFragment extends MainFragment implements StatusAsyncTask.Sta
             showNotificationCard(R.layout.no_manifest_card, "showNoManifestCard");
         }
 
-        if(res.device != null) {
-            if(!res.device.isOfficialPort())
-                showNotificationCard(R.layout.unofficial_port_card, "showUnofficialPortCard");
-            if(!res.device.supportsUbuntuTouch())
-                showNotificationCard(R.layout.ubuntu_unsupported_card, "showUbuntuUnsupported");
-        }
-
 
         if(!hasUbuntu)
             m_actListener.setRefreshComplete();
