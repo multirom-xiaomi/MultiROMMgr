@@ -6,13 +6,13 @@
     <string name="status">Status</string>
     <string name="no_su">Failed to get root access!</string>
     <string name="action_refresh">Refresh</string>
-    <string name="unsupported">This is unsupported device (%1$s)!</string>
-    <string name="status_text"><![CDATA[<b>MultiROM:</b> v%1$s%2$s<br><b>Recovery:</b> %3$s%4$s<br><b>Kernel:</b> %5$s]]></string>
+    <string name="unsupported">This is an Unsupported Device (%1$s)!</string>
+    <string name="status_text"><![CDATA[<b>MultiROM:</b> v%1$s%2$s<br><b>Recovery:</b> %3$s%4$s]]></string>
     <string name="mrom_ver_fail">Failed to read MultiROM version!</string>
-    <string name="no_multirom">MultiROM is not installed.</string>
-    <string name="no_recovery">MultiROM recovery is not installed.</string>
+    <string name="no_multirom">MultiROM is not Installed.</string>
+    <string name="no_recovery">MultiROM Recovery is not installed.</string>
     <string name="has_kexec"><![CDATA[<font color=\"#339900\">has kexec-hardboot patch</font>]]></string>
-    <string name="no_kexec"><![CDATA[<font color=\"red\">doesn\'t have kexec-hardboot patch!</font>]]></string>
+    <string name="no_kexec"><![CDATA[<font color=\"#339900\">No-Kexec Patch Detected!</font>]]></string>
     <string name="update_available"><![CDATA[<font color=\"blue\"> (Update available)</font>]]></string>
     <string name="manifest_fail">Failed to download info about updates!</string>
     <string name="install_multirom">MultiROM v%1$s</string>
