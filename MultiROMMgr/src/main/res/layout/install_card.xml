@@ -57,15 +57,6 @@
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
-            <CheckBox
-                android:id="@+id/install_kernel"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="@string/install_kernel"/>
-            <Spinner
-                android:id="@+id/kernel_options"
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content" />
         </LinearLayout>
         <Button
             android:id="@+id/install_btn"
