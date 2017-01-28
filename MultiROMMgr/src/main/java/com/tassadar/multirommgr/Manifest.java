@@ -42,7 +42,6 @@ public class Manifest {
         public String type;
         public String version;
         public String url;
-        public String md5;
         public long size;
         public JSONObject extra;
 
@@ -161,7 +160,6 @@ public class Manifest {
             file.type = f.getString("type").toLowerCase();
             file.version = f.getString("version");
             file.url = f.getString("url");
-            file.md5 = f.getString("md5");
             file.size = f.getLong("size");
             file.extra = f.optJSONObject("extra");
 

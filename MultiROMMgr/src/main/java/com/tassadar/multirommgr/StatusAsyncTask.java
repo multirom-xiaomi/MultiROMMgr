@@ -291,10 +291,7 @@ public class StatusAsyncTask extends AsyncTask <Void, String, StatusAsyncTask.Re
         if(man != null && man.hasCommand("NOTICE")) {
             String text = man.getCommandArg("NOTICE");
             if(text != null) {
-                String hash = Utils.calculateChecksum(text.getBytes(), "MD5");
                 SharedPreferences p = MgrApp.getPreferences();
-                final Set<String> shownHashes = p.getStringSet("shownNotices", null);
-                if(shownHashes == null || !shownHashes.contains(hash)) {
                     new AlertDialog.Builder(l.getContext())
                             .setTitle(R.string.notice)
                             .setCancelable(true)
@@ -303,15 +300,6 @@ public class StatusAsyncTask extends AsyncTask <Void, String, StatusAsyncTask.Re
                             .setPositiveButton(R.string.ok_nohtml, null)
                             .create()
                             .show();
-
-                    HashSet<String> saveHashes = new HashSet<String>();
-                    if(shownHashes != null && !shownHashes.isEmpty())
-                        saveHashes.addAll(shownHashes);
-                    saveHashes.add(hash);
-                    SharedPreferences.Editor e = p.edit();
-                    e.putStringSet("shownNotices", saveHashes);
-                    e.apply();
-                }
             }
         }
     }
