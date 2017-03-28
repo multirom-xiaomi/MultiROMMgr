@@ -31,7 +31,7 @@ public class SettingsFragment extends PreferenceFragment implements SharedPrefer
     public static final String DEV_MANIFEST_URL = "dev_manifest_url_v2";
     public static final String DEV_DEVICE_NAME = "dev_device_name";
 
-    private static final String SRC_URL = "http://github.com/Tasssadar/MultiROMMgr";
+    private static final String SRC_URL = "http://github.com/multirom-xiaomi/MultiROMMgr";
     private static final int DEV_STEPS = 7;
 
     @Override
