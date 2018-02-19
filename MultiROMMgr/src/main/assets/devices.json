@@ -1,6 +1,52 @@
 {
     "devices": [
         {
+            "names": [ "hydrogen", "MIMAX" ],
+            "manifest_url": "https://raw.githubusercontent.com/multirom-h2/multirom-mimax/hydrogen/manifest.json",
+            "check_gpg": false,
+            "kexec_check_path": "/sys/kernel/kexec_loaded",
+            "ubuntu_touch": {
+                "enabled": false
+            },
+            "devices": [
+                {
+                    "name": "recovery",
+                    "path": "/dev/block/bootdevice/by-name/recovery"
+                },
+                {
+                    "name": "boot",
+                    "path": "/dev/block/bootdevice/by-name/boot"
+                },
+                {
+                    "name": "cache",
+                    "path": "/dev/block/bootdevice/by-name/cache"
+                }
+            ]
+        },
+        {
+            "names": [ "helium", "MIMAX652" ],
+            "manifest_url": "https://raw.githubusercontent.com/multirom-h2/multirom-mimax/helium/manifest.json",
+            "check_gpg": false,
+            "kexec_check_path": "/sys/kernel/kexec_loaded",
+            "ubuntu_touch": {
+                "enabled": false
+            },
+            "devices": [
+                {
+                    "name": "recovery",
+                    "path": "/dev/block/bootdevice/by-name/recovery"
+                },
+                {
+                    "name": "boot",
+                    "path": "/dev/block/bootdevice/by-name/boot"
+                },
+                {
+                    "name": "cache",
+                    "path": "/dev/block/bootdevice/by-name/cache"
+                }
+            ]
+        },
+        {
             "names": [ "kenzo", "HMNOTE3" ],
             "manifest_url": "https://raw.githubusercontent.com/multirom-xiaomi/multirom-xiaomi.github.io/kenzo-stable/manifest.json",
             "check_gpg": false,
@@ -46,5 +92,28 @@
                 }
             ]
         },
+        {
+            "names": [ "garlic", "yu5040" ],
+            "manifest_url": "https://raw.githubusercontent.com/multirom-xiaomi/multirom-xiaomi.github.io/mido-stable/manifest.json",
+            "check_gpg": false,
+            "kexec_check_path": "/sys/kernel/kexec_loaded",
+            "ubuntu_touch": {
+                "enabled": false
+            },
+            "devices": [
+                {
+                    "name": "recovery",
+                    "path": "/dev/block/bootdevice/by-name/recovery"
+                },
+                {
+                    "name": "boot",
+                    "path": "/dev/block/bootdevice/by-name/boot"
+                },
+                {
+                    "name": "cache",
+                    "path": "/dev/block/bootdevice/by-name/cache"
+                }
+            ]
+        }
 	]
 }

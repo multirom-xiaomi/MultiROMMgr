@@ -1,23 +1,26 @@
 buildscript {
     repositories {
-        mavenCentral()
+        maven { url 'https://maven.fabric.io/public' }
     }
+
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.1.2'
+        classpath 'io.fabric.tools:gradle:1.21.7'
     }
 }
+
 apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
 
 repositories {
     mavenCentral()
 }
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion '23.0.2'
+    compileSdkVersion 27
+    buildToolsVersion "27.0.3"
     defaultConfig {
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 27
     }
     buildTypes {
         debug {
@@ -32,8 +35,8 @@ android {
 }
 
 dependencies {
-    compile 'com.android.support:support-v4:23.1.1'
-    compile 'com.android.support:appcompat-v7:23.1.1'
+    implementation 'com.android.support:support-v4:27.0.2'
+    implementation 'com.android.support:appcompat-v7:27.0.2'
 }
 
 android {
