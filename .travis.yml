@@ -1,0 +1,33 @@
+language: android
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-27.0.3
+    - android-27
+    - add-on
+    - extra
+licenses:
+    - 'android-sdk-license-.+'
+
+jdk:
+- oraclejdk8
+script: "./gradlew build && find -type f -name *.apk"
+
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
+
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key: "$GIT_OAUTH_TOKEN_TB"
+  file: "./app/build/outputs/apk/release/app-release.apk"
+  on:
+    repo: multirom-h2/MultiROMMgr
+before_install:
+      - yes | sdkmanager "platforms;android-27"
